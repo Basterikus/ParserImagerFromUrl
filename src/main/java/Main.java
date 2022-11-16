@@ -10,6 +10,7 @@ import java.nio.file.StandardCopyOption;
 
 public class Main {
     private static final String URL = "https://lenta.ru/";
+    private static final String PATH_START = "images\\";
 
     public static void main(String[] args) {
         try {
@@ -20,7 +21,7 @@ public class Main {
                 String[] fragments = urlImg.split("/");
                 if (fragments.length == 10) {
                     String fileName = fragments[fragments.length - 1];
-                    String pathName = "images\\" + fileName;
+                    String pathName = PATH_START + fileName;
                     try {
                         URL url = new URL(urlImg);
                         InputStream inputStream = url.openStream();
